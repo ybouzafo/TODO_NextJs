@@ -1,36 +1,88 @@
+# ✅ Todo List App – Built with Next.js & React Query
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+It’s a simple yet powerful **Todo List** application where you can create, display, update, and delete your tasks. The app uses [React Query](https://tanstack.com/query/latest) to handle asynchronous operations, and [json-server](https://github.com/typicode/json-server) to simulate a real backend API with a local JSON file.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- ✅ Add new tasks
+- 📝 Edit existing tasks
+- ☑️ Toggle task completion
+- 🗑️ Delete tasks
+- 🔁 React Query for data fetching and automatic cache updates
+- ⚡ Optimistic UI updates for better user experience
+- 📁 Uses `json-server` as a fake REST API
+- 🎨 Clean and minimal interface (with or without Tailwind)
+
+---
+
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
 
 ```bash
+git clone git@github.com:ybouzafo/TODO_NextJs.git
+cd TODO_NextJs
+
+
+###  2. Install dependencies
+
+npm install
+# or
+yarn install
+
+### 3. Start the JSON Server
+
+npx json-server --watch db.json --port 4000
+
+### 4. Start the Next.js development server
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Then, open http://localhost:3000 in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Sample db.json :
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Learn React Query",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Finish Todo App",
+      "completed": true
+    }
+  ]
+}
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📦 Technologies Used
 
-## Deploy on Vercel
+Next.js – React Framework
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+React Query – Data fetching & caching
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+json-server – Mock REST API
+
+(Optional) Tailwind CSS – Utility-first CSS
+
+🧠 Learn More
+To learn more about Next.js:
+
+Next.js Documentation
+
+Learn Next.js
+
+React Query Docs
