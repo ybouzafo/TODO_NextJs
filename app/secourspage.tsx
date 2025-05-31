@@ -21,13 +21,11 @@ export default function Page() {
     () => console.log('success'),
     (err: unknown) => console.log(err)
   )
-  const tasks: Task[] = data ?? []
-
 
   const handleAddTaskClick = () => {
     if (!title.trim()) return
 
-    const maxId = tasks?.reduce((max: number, task: Task) => Math.max(max, Number(task.id)), 0) || 0
+    const maxId = data?.reduce((max: number, task: Task) => Math.max(max, Number(task.id)), 0) || 0
     const newId = (maxId + 1).toString()
 
     const newTask: Task = { id: newId, title, completed: false }
@@ -59,7 +57,7 @@ export default function Page() {
             
           </h2>
           <p className="text-black  dark:text-white opacity-70 text-center">
-            {tasks ? `${tasks.length} Tasks` : '0 Tasks'}
+            {data ? `${data.length} Tasks` : '0 Tasks'}
           </p>
   
           {/* Input + buttons */}
@@ -84,10 +82,10 @@ export default function Page() {
   
         {/* Task List */}
         <section className="flex-1 overflow-y-auto px-4 py-2 space-y-2 scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-200">
-          {tasks?.length === 0 && (
+          {data?.length === 0 && (
             <p className="text-center dark:text-white text-gray-400 mt-10">No tasks available</p>
           )}
-          {tasks
+          {data
             ?.filter(task =>
               task.title.toLowerCase().includes(searchTerm.toLowerCase())
             )
@@ -97,23 +95,21 @@ export default function Page() {
                 className={`flex items-center justify-between p-4 rounded-md border-b dark:text-white border-gray-200 cursor-default
                   ${task.completed ? 'bg-[#99F6E440]' : 'hover:bg-[#99F6E420]'} transition`}
               >
-                <label className="flex items-center gap-3 cursor-pointer select-none text-black dark:text-white flex-1 min-w-0">
-
+                <label className="flex items-center gap-3 cursor-pointer select-none text-black dark:text-white">
                   <input
                     type="checkbox"
                     checked={task.completed}
                     onChange={() => handleToggleCompleted(task.id, task.completed)}
                     className="w-5 h-5 rounded border-2 border-black dark:border-white checked:bg-[#0D9488] checked:border-[#0F766E] focus:ring-0"
                   />
-               <span
-                className={`text-lg truncate whitespace-nowrap overflow-hidden text-ellipsis flex-1 max-w-full ${
-                  task.completed ? 'line-through opacity-50' : ''
-                }`}
-                title={task.title}
-              >
-                {task.title || <em className="text-gray-300">Untitled task</em>}
-              </span>
-
+                  <span
+                    className={`text-lg ${
+                      task.completed ? 'line-through opacity-50' : ''
+                    } truncate max-w-xs`}
+                    title={task.title}
+                  >
+                    {task.title || <em className="text-gray-300">Untitled task</em>}
+                  </span>
                 </label>
                 <button
                   onClick={() => handleDeleteTask(task.id)}
