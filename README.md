@@ -31,7 +31,7 @@ git clone git@github.com:ybouzafo/TODO_NextJs.git
 cd TODO_NextJs
 
 
-###  2. Install dependencies
+## ⚙️  Install dependencies
 
 npm install
 # or
@@ -67,6 +67,8 @@ Sample db.json :
   ]
 }
 
+
+## ⚙️ Technologies Used
 
 📦 Technologies Used
 
