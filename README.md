@@ -29,26 +29,35 @@ It’s a simple yet powerful **Todo List** application where you can create, dis
 ```bash
 git clone git@github.com:ybouzafo/TODO_NextJs.git
 cd TODO_NextJs
-
+```
 
 ###  2. Install dependencies
+
+```bash
 
 npm install
 # or
 yarn install
+```
+
 
 ### 3. Start the JSON Server
 
+```bash
 npx json-server --watch db.json --port 4000
+```
 
 ### 4. Start the Next.js development server
+
+```bash
+
 npm run dev
 # or
 yarn dev
+```
 
 
-Then, open http://localhost:3000 in your browser.
-
+-->Then, open http://localhost:3000 in your browser.
 
 
 Sample db.json :
@@ -67,22 +76,14 @@ Sample db.json :
   ]
 }
 
+## 🛠️ Technologies Used
+- **Next.js** – [React Framework for production](https://nextjs.org/)
+- **React Query** – [Powerful async state manager](https://react-query.tanstack.com/)
+- **JSON Server** – [Mock REST API](https://github.com/typicode/json-server)
+- **TailwindCSS (optional)** – [Utility-first CSS framework](https://tailwindcss.com/)
 
-📦 Technologies Used
-
-Next.js – React Framework
-
-React Query – Data fetching & caching
-
-json-server – Mock REST API
-
-(Optional) Tailwind CSS – Utility-first CSS
-
-🧠 Learn More
-To learn more about Next.js:
-
-Next.js Documentation
-
-Learn Next.js
-
-React Query Docs
+## 📚 Useful Resources
+- 📘 [Next.js Documentation](https://nextjs.org/docs)
+- 🔍 [React Query Docs](https://react-query.tanstack.com/)
+- 🔧 [JSON Server Docs](https://github.com/typicode/json-server)
+- 🎨 [TailwindCSS Docs](https://tailwindcss.com/docs)
